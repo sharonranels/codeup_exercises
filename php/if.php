@@ -30,11 +30,9 @@ if ($b == $c) {
 		echo "$b is identical to $c\n";
 } elseif ($b != $c) {
 		echo "$b is not equal to $c\n";
-} else
-{
-if ($b !== $c) {
+} else {
 	echo "$b is not identical to $c\n";
 }
-}
+
 
 ?>
