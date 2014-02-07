@@ -21,25 +21,25 @@ while($user_guess != $rndnumber) {
 if ($user_guess > $rndnumber) {
 	fwrite(STDOUT, "LOWER\n");
 	fwrite(STDOUT, 'Guess again ');
-	$user_guess = fgets(STDIN);
-	$count_guesses += 1;
+	
 }
 
 //if user's guess is low, output HIGHER  
 	elseif ($user_guess < $rndnumber) {
 	fwrite(STDOUT, "HIGHER\n");
 	fwrite(STDOUT, 'Guess again ');
+	
+}
 	$user_guess = fgets(STDIN);
 	$count_guesses += 1;
-}
-
 
 }
+ //if user's guess is correct, declare GOOD GUESS
  echo "GOOD GUESS\n";
  echo($count_guesses) . " Guesses\n";
 
 
-//if user's guess is correct, declare GOOD GUESS
+
 
 //Exit
 ?>
