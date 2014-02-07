@@ -1,7 +1,7 @@
 <?php
 
 //pick random number
-$rndnumber = rand(1 , 100);
+$rndnumber = mt_rand(1 , 100);
 echo($rndnumber);
 
 //prompt user to guess number
