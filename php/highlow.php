@@ -13,7 +13,7 @@ fwrite(STDOUT, 'Guess number ');
 
 $user_guess = fgets(STDIN);
 $count_guesses += 1;
-echo($user_guess);
+
 
 //if user's guess is high, output LOWER
 while($user_guess != $rndnumber) {
@@ -30,7 +30,7 @@ if ($user_guess > $rndnumber) {
 	fwrite(STDOUT, 'Guess again ');
 	
 }
-	$user_guess = fgets(STDIN);
+		$user_guess = fgets(STDIN);
 	$count_guesses += 1;
 
 }
