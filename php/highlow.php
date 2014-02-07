@@ -1,7 +1,32 @@
 <?php
 
+// Dump arg count
+//var_dump($argc);
+// Dump arg vars
+//var_dump($argv);
+
+//check numbers
+if (($argc != 3) || (!is_numeric($argv[1])) || (!is_numeric($argv[2]))) {
+	echo "Please give two numbers between 1 and 100";
+	exit(0);
+}
+
+
+
+//is_numeric($element)
+
+$min = $argv[1];
+$max = $argv[2];
+
+// If there are 2 args + filename
+if ($argc == 3) {
+  	// Echo them out directly
+    	echo "arg1 is {$argv[1]} and arg2 is {$argv[2]}\n";
+}
+
+
 //pick random number
-$rndnumber = mt_rand(1 , 100);
+$rndnumber = mt_rand($min, $max);
 $count_guesses = 0;
 echo($rndnumber);
 
@@ -38,7 +63,7 @@ if ($user_guess > $rndnumber) {
  echo "GOOD GUESS\n";
  echo($count_guesses) . " Guesses\n";
 
-
+exit(0);
 
 
 //Exit
