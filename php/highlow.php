@@ -5,25 +5,28 @@
 // Dump arg vars
 //var_dump($argv);
 
-//check numbers
-if (($argc != 3) || (!is_numeric($argv[1])) || (!is_numeric($argv[2]))) {
-	echo "Please give two numbers between 1 and 100";
+if ($argc != 3) {
+	echo "You must give two numbers between 1 and 100\n";
 	exit(0);
+	
 }
 
 
+$min = is_numberic($argv[1]) ? intval($argv([1]) : 1;
+$max = is_numberic($argv[2]) ? intval($argv([1]) : 100;
 
-//is_numeric($element)
 
-$min = $argv[1];
-$max = $argv[2];
 
-// If there are 2 args + filename
-if ($argc == 3) {
-  	// Echo them out directly
-    	echo "You've selected $argv[1] as a minimum and $argv[2] as a maximum.
+//check numbers
+if (($argc != 3) || (!is_numeric($min)) || (!is_numeric($max)) || ($min < 0) || ($min > $max ) || ($max > 100)) {
+	echo "Please give two numbers between 1 and 100\n";
+	exit(0);
+} else {
+	echo "You've selected $min as a minimum and $max as a maximum.ß	
 Please guess the randomly seleted number in that range.\n";
 }
+
+
 
 
 //pick random number
