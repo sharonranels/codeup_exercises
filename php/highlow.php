@@ -21,7 +21,8 @@ $max = $argv[2];
 // If there are 2 args + filename
 if ($argc == 3) {
   	// Echo them out directly
-    	echo "arg1 is {$argv[1]} and arg2 is {$argv[2]}\n";
+    	echo "You've selected $argv[1] as a minimum and $argv[2] as a maximum.
+Please guess the randomly seleted number in that range.\n";
 }
 
 
