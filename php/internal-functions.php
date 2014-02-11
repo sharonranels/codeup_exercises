@@ -7,6 +7,9 @@ $array = array(1,2,3);
 // Create a funciton that checks if a variable is set or empty, and display "$variable_name is SET|EMPTY"
 
 // TEST: If var $nothing is set, display '$nothing is SET'
+unset($nothing);
+unset($something);
+
 if (isset ($nothing)) {
 	echo "\$nothing is SET\n";
 } else {
@@ -26,14 +29,6 @@ if (isset ($something)) {
 	echo "\$something is SET\n";
 } else {
 	echo "\$something is EMPTY\n";
-}
-
-// TEST: Update the 'is set' check on $something to see if it is 'empty'. What happens?
-
-if (empty ($something)) {
-	echo "\$something is EMPTY\n";
-} else {
-	echo "\$something is SET\n";
 }
 
 
