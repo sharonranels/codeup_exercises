@@ -1,64 +1,92 @@
 <?php
 
 
-function validate($a, $b) {
-	if (!is_numeric($a) || !is_numeric($b)) {
-		echo "ERROR - you must give two numbers\n";
-		var_dump($a);
-		var_dump($b);
-		exit(0);
-}
+function isValid($a, $b) {
+	if (is_numeric($a) && is_numeric($b)) {
+		return true;
+	} else { 
+		return false;
+	}
 }
 
+		// echo "ERROR - you must give two numbers\n";
+		// var_dump($a);
+		// var_dump($b);
+		// exit(0);
+
+
 function add($a, $b = 0) {
-	validate($a, $b);
-    echo $a + $b . "\n";	    
-}
-add (5, 4);
+	if (isValid($a, $b)) {
+    	return $a + $b . "\n";	
+    } else {
+    	return "not valid\n";
+    }
+  }    
+
+echo add (5, 4);
 
 
 function subtract($a, $b = 0) {
-    validate($a, $b);
-    echo $a - $b. "\n";	  
+    if (isValid($a, $b)) {
+    	return $a - $b . "\n";	
+    } else {
+    	return "not valid\n";
+    }    
 }
-subtract (5, 4);
+echo subtract (5, 'a');
    
 
 function multiply($a, $b = 0) {
-    validate($a, $b);
-    echo $a * $b . "\n";
+    if (isValid($a, $b)) {
+    	return $a * $b . "\n";	
+    } else {
+    	return "not valid\n";
+    }    
 }
-multiply (5, 4);
+echo multiply (5, 4);
    
 
-
-
-
-function validate0($a, $b) {
-	if ($b == 0) {
-		echo "ERROR - you cannot divide by 0\n";
-		var_dump($a);
-		var_dump($b);
-		exit(0);
+function isValid0($a, $b) {
+	if ($b != 0) {
+		return true;
+	} else { 
+		return false;
+	}
 }
-}
+		// echo "ERROR - you cannot divide by 0\n";
+		// var_dump($a);
+		// var_dump($b);
+		// exit(0);
+
+
 
 function divide($a, $b = 0) {
-	validate($a, $b);
-	validate0($a, $b);
-    echo $a / $b . "\n";
+	if (isValid($a, $b) && isValid0($a, $b)) {
+    	return $a / $b . "\n";	
+    } else {
+    	return "not valid\n";
+    }    
 }
-	divide (5, 4);
+echo divide ("Sharon", 4);
 
+
+ //    isValid($a, $b);
+	// isValid0($a, $b);
+ //    echo $a / $b . "\n";
 
 
 
 function modulus($a, $b = 0) {
-    validate($a, $b);
-	validate0($a, $b);
-    echo $a % $b . "\n";
+    if (isValid($a, $b) && isValid0($a, $b)) {
+    	return $a / $b . "\n";	
+    } else {
+    	return "not valid\n";
+    }    
 }
-	modulus (5, 4);
+echo modulus (5, 0);
       
+// echo divide ("Sharon", 4);isValid($a, $b);
+// 	isValid0($a, $b);
+//     echo $a % $b . "\n";
 
 ?>
