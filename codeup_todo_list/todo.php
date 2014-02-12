@@ -12,9 +12,9 @@ $items = array();
 function list_items($list) {
     $todos = "";
     foreach ($list as $key => $item) {
-        $key = $key + 1;
+        $temp_key = $key + 1;
         // Display each item and a newline
-        $todos .= "[{$key}] {$item}\n";
+        $todos .= "[{$temp_key}] {$item}\n";
     }
     return $todos;
     
@@ -23,18 +23,15 @@ function list_items($list) {
 
 // Get STDIN, strip whitespace and newlines, 
 // and convert to uppercase if $upper is true
+// DEFAULT = ($upper = FALSE) in THIS CASE
 function get_input($upper = FALSE) {
     $input = trim(fgets(STDIN));
     
     if ($upper == TRUE) {
        $input = strtoupper($input);
-    } else { 
-
+    }
+    
     return $input;
-
-
-    // Return filtered STDIN input
-}
 }
 
 // The loop!
