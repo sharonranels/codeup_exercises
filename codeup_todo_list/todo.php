@@ -4,6 +4,11 @@
 $items = array();
 
 // List array items formatted for CLI
+    // Return string of list items separated by newlines.
+    // Should be listed [KEY] Value like this:
+    // [1] TODO item 1
+    // [2] TODO item 2 - blah
+    // DO NOT USE ECHO, USE RETURN
 function list_items($list) {
     $todos = "";
     foreach ($list as $key => $item) {
@@ -14,19 +19,22 @@ function list_items($list) {
     return $todos;
     
 
-    // Return string of list items separated by newlines.
-    // Should be listed [KEY] Value like this:
-    // [1] TODO item 1
-    // [2] TODO item 2 - blah
-    // DO NOT USE ECHO, USE RETURN
 }
 
 // Get STDIN, strip whitespace and newlines, 
 // and convert to uppercase if $upper is true
-function get_input($upper = FALSE) 
-{
+function get_input($upper = FALSE) {
+    $input = trim(fgets(STDIN));
+    
+    if ($upper == TRUE) {
+       $input = strtoupper($input);
+    } else { 
+
+    return $input;
+
 
     // Return filtered STDIN input
+}
 }
 
 // The loop!
@@ -38,19 +46,19 @@ do {
 
     // Get the input from user
     // Use trim() to remove whitespace and newlines
-    $input = strtoupper(trim(fgets(STDIN)));
+    $input = get_input(true);
 
     // Check for actionable input
     if ($input == 'N') {
         // Ask for entry
         echo 'Enter item: ';
         // Add entry to list array
-        $items[] = trim(fgets(STDIN));
+        $items[] = get_input();
     } elseif ($input == 'R') {
         // Remove which item?
         echo 'Enter item number to remove: ';
         // Get array key
-        $rkey = trim(fgets(STDIN));
+        $rkey = get_input();
         $rkey = $rkey - 1;
         // Remove from array
         unset($items[$rkey]);

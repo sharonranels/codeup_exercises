@@ -21,7 +21,7 @@ function setEmpty($checkvar) {
 if (setEmpty($nothing)) {
 	echo "\$nothing is SET.\n";
 } else {
-	echo "\noting is not SET.\n";
+	echo "\$nothing is not SET.\n";
 }
 
 // if (isset ($nothing)) {
