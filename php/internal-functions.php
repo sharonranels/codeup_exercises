@@ -6,15 +6,29 @@ $array = array(1,2,3);
 
 // Create a funciton that checks if a variable is set or empty, and display "$variable_name is SET|EMPTY"
 
-// TEST: If var $nothing is set, display '$nothing is SET'
-unset($nothing);
-unset($something);
-
-if (isset ($nothing)) {
-	echo "\$nothing is SET\n";
-} else {
-	echo "\$nothing is EMPTY\n";
+function setEmpty($checkvar) {
+	if (isset($checkvar) && !empty($checkvar)) {
+		return TRUE;
+	} else {
+			return FALSE;
+	}
 }
+
+// TEST: If var $nothing is set, display '$nothing is SET'
+//unset($nothing);
+//unset($something);
+
+if (setEmpty($nothing)) {
+	echo "\$nothing is SET.\n";
+} else {
+	echo "\noting is not SET.\n";
+}
+
+// if (isset ($nothing)) {
+// 	echo "\$nothing is SET\n";
+// } else {
+// 	echo "\$nothing is EMPTY\n";
+// }
 
 // TEST: If var $nothing is empty, display '$nothing is EMPTY'
 if (empty ($nothing)) {
@@ -34,13 +48,13 @@ if (isset ($something)) {
 
 // Serialize the array $array, and output the results
 
-$array2 = serialize($array);
-echo $array2 . "\n";
+$serial = serialize($array);
+var_dump($serial) . "\n";
 
 // Unserialize the array $array, and output the results
 
-$array = unserialize($array2);
-var_dump($array);
+$unserial = unserialize($serial);
+var_dump($unserial);
 
 
 
