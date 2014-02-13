@@ -13,8 +13,6 @@ $query_names = ['Tina', 'Bob'];
 //function query_name($query, $names) {
 // this function is going to compare a name to names in an array
 
-//function look_for_name($temp_lookup) {
-
 
 function names_in_common($compare, $names) {
 	$in_names = [];
