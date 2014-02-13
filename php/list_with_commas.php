@@ -33,29 +33,6 @@ echo "Some of the most famous fictional theoretical physicists are {$famous_fake
 
 
 
-
-
-
-
-
-
-
-// function names_in_common($compare, $names) {
-// 	$in_names = [];
-// 	foreach ($compare as $look_up) {
-// 		$result = array_search($look_up, $names);
-
-// 		if (is_numeric($result)) {
-// 			$in_names[] = $result;
-// 		}
-// 	}
-// 	return $in_names;
-
-
-
-
-
-
 // List of famous peeps
 
 
