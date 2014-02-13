@@ -48,9 +48,21 @@ do {
     // Check for actionable input
     if ($input == 'N') {
         // Ask for entry
+        
         echo 'Enter item: ';
         // Add entry to list array
-        $items[] = get_input();
+        $new_items = get_input();
+
+        echo 'Do you want to add this to the (B)eginning or (E)nd of the list? ';
+            $input = get_input(true);
+            if ($input == 'B') {
+                array_unshift($items, $new_items);
+            } elseif ($input == 'E' || '') {
+                array_push($items, $new_items);
+            }
+
+
+
     
     } elseif ($input == 'R') {
         // Remove which item?
