@@ -54,15 +54,12 @@ do {
         $new_items = get_input();
 
         echo 'Do you want to add this to the (B)eginning or (E)nd of the list? ';
-            $input = get_input(true);
-            if ($input == 'B') {
-                array_unshift($items, $new_items);
-            } elseif ($input == 'E' || '') {
-                array_push($items, $new_items);
-            }
-
-
-
+        $input = get_input(true);
+        if ($input == 'B') {
+            array_unshift($items, $new_items);
+        } else {
+            array_push($items, $new_items);
+        }
     
     } elseif ($input == 'R') {
         // Remove which item?
@@ -78,14 +75,19 @@ do {
 
     } elseif ($input == 'S') {
         echo 'Do you want to sort (A to Z) or (Z to A)? (enter A or Z) ';
-            $input = get_input(true);
-            if ($input == 'A') {
-                sort($items);
-            } else {
-                rsort($items);
-            }
+        $input = get_input(true);
+        if ($input == 'A') {
+            sort($items);
+        } else {
+            rsort($items);
+    }
+
             
-}
+    } elseif ($input == 'F') {
+        array_pop($items);
+    } elseif ($input == 'L') {
+        array_shift($items);
+    }
             
 
 
