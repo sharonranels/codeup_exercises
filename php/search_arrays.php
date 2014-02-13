@@ -14,6 +14,18 @@ $query_names = ['Tina', 'Bob'];
 // this function is going to compare a name to names in an array
 
 
+function count_matches($needles, $haystack) {
+	$number_of_matches = 0;
+	foreach ($needles as $needle) {
+		$result = array_search(needle, haystack);
+		if(is_numeric($result)) {
+			$number_of_matches++;
+
+		}
+	}
+	return $number_of_matches;
+}
+
 function names_in_common($compare, $names) {
 	$in_names = [];
 	foreach ($compare as $look_up) {
