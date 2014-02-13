@@ -5,20 +5,51 @@ $names = ['Tina', 'Dana', 'Mike', "Amy", 'Adam'];
 
 $compare = ['Tina', 'Dean', 'Mel', 'Amy', 'Michael'];
 
+$query_names = ['Tina', 'Bob'];
+
 // search for Tina and Bob in $names
 // return True or False
-$query = 'Tina';
 
-$result = array_search($query, $names);
+//function query_name($query, $names) {
+// this function is going to compare a name to names in an array
 
-if ($result === false) {
-	echo "FALSE\n";
-} else {
-	echo "TRUE\n";
+//function look_for_name($temp_lookup) {
+
+
+function names_in_common($compare, $names) {
+	$in_names = [];
+	foreach ($compare as $look_up) {
+		$result = array_search($look_up, $names);
+
+		if (is_numeric($result)) {
+			$in_names[] = $result;
+		}
+	}
+	return $in_names;
 }
-var_dump($result);
-	
 
+var_dump(names_in_common($compare, $names));
+
+
+// function look_for_name($temp_lookup, $temp_names) {
+// 	$result = array_search($temp_lookup, $temp_names);
+
+// 	if (is_numeric($result)) {
+// 		return "TRUE\n";
+// 	} else {
+// 		return "FALSE\n";
+// 	}
+// }
+
+// $answer1 = look_for_name('Tina', $names);
+// $answer2 = look_for_name('Bob', $names);
+// echo $answer1;
+// echo $answer2;
+
+
+//$result = array_search($query, $names);
+
+	
 
 
 
