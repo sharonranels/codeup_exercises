@@ -8,6 +8,8 @@ function humanized_list($array) {
 
 
 
+
+
 }
 
 
@@ -17,14 +19,19 @@ function humanized_list($array) {
 $physicists_string = 'Gordon Freeman, Samantha Carter, Sheldon Cooper, Quinn Mallory, Bruce Banner, Tony Stark';
 
 $physicists_array = explode (', ', $physicists_string);
-sort($physicists_array);
+
+
+echo 'Do you want to alphabetize the list of physicists? ';
+        $input = strtoupper(trim(fgets(STDIN)));
+        if ($input == 'Y') {
+            sort($physicists_array);
+        }
 
 $last_name = array_pop($physicists_array);
 
 $famous_fake_physicists = implode(', ', $physicists_array) . ' and ' . $last_name . '.' . PHP_EOL;
 
 echo "Some of the most famous fictional theoretical physicists are {$famous_fake_physicists}.";
-
 
 
 
