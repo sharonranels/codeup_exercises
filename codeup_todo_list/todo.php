@@ -39,7 +39,7 @@ do {
     // Echo the list produced by the function
     echo list_items($items);
     // Show the menu options
-    echo '(N)ew item, (R)emove item, (S)ort items, (Q)uit : ';
+    echo '(N)ew item, (O)pen existing list, (R)emove item, (S)ort items, (Q)uit : ';
 
     // Get the input from user
     // Use trim() to remove whitespace and newlines
@@ -73,6 +73,16 @@ do {
     
     // ADD SORT OPTION
 
+    } elseif ($input == 'O') {
+        $filename = "data/todo_list.txt";
+        $handle = fopen($filename, "r");
+        $contents = fread($handle, filesize($filename));
+        $contents_array = explode("\n", $contents);
+        foreach ($contents_array as $new_info) {
+           array_push($items, $new_info);
+        }
+        fclose($handle);
+    
     } elseif ($input == 'S') {
         echo 'Do you want to sort (A to Z) or (Z to A)? (enter A or Z) ';
         $input = get_input(true);
@@ -80,15 +90,14 @@ do {
             sort($items);
         } else {
             rsort($items);
-    }
-
+        }
             
     } elseif ($input == 'F') {
         array_pop($items);
+    
     } elseif ($input == 'L') {
         array_shift($items);
-    }
-            
+    }    
 
 
 // Exit when input is (Q)uit
