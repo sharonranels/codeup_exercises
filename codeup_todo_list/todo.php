@@ -39,7 +39,7 @@ do {
     // Echo the list produced by the function
     echo list_items($items);
     // Show the menu options
-    echo '(N)ew item, (O)pen existing list, (R)emove item, (S)ort items, (Q)uit : ';
+    echo '(N)ew item, (O)pen existing list, (R)emove item, (S)ort items, (Q)uit, Sa(V)e : ';
 
     // Get the input from user
     // Use trim() to remove whitespace and newlines
@@ -78,11 +78,28 @@ do {
         $handle = fopen($filename, "r");
         $contents = fread($handle, filesize($filename));
         $contents_array = explode("\n", $contents);
+        fclose($handle);
         foreach ($contents_array as $new_info) {
            array_push($items, $new_info);
         }
-        fclose($handle);
     
+
+    } elseif ($input == 'V') {
+        echo 'What is the name of the file to which you would like to save? ';
+        $input = get_input(true);
+        $handle = fopen($filename, "w+");
+        if (file_exists($input){
+            echo 'This file already exists - do you want to overwrite it? ';    
+        }
+        
+            foreach ($items as $task) {
+            fwrite($handle, PHP_EOL . $task);
+        }
+            } else {
+            file_put_contents($filename, $input);
+        }
+        fclose($handle);
+
     } elseif ($input == 'S') {
         echo 'Do you want to sort (A to Z) or (Z to A)? (enter A or Z) ';
         $input = get_input(true);
