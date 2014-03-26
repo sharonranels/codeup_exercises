@@ -1,1 +1,7 @@
-DATA/TODO_LIST_2.TXT
+buy groceries
+brush cat
+Take out the trash
+Make the bed
+Buy some milk
+Train a Markov chain
+Teach the dog binary

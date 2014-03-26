@@ -3,6 +3,7 @@
 
 
 $bugs = 99;
+$bugs2 = mt_rand(0, 117);
 
 do {
 	if ($bugs > 1) {
@@ -23,8 +24,9 @@ do {
 			}
 		}
 
-	$bugs = $bugs2;
+	$bugs = $bugs2; 
 	$bugs2 = mt_rand(0,117);
+
 } while (($bugs2 > 0) || ($bugs > 0));
 
 ?>

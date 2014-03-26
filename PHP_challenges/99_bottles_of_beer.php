@@ -1,9 +1,19 @@
 <?php
 
 $num_bottles = 99;
+$bottle = " bottle";
+$plural = "s";
+$what = " of beer";
+$location = " on the wall";
+$do = " Take one down, pass it around, ";
+$comma = ", ";
+$period = ".";
+
+
+
 do {
-	echo $num_bottles . " bottles of beer on the wall, " . $num_bottles . " of beer. Take one down and pass it around, " . ($num_bottles - 1) . " bottles of beer on the wall." . "\n";
-	$num_bottles = ($num_bottles - 1);
+	if ($num_bottles > 2) {
+	echo "$num_bottles . $bottle . $plural . $what . $location . $comma . $bottle . $plural . $what . $period . $do . ($num_bottles = $num_bottles - 1) . $what $location";
 } while ($num_bottles >=3);
 
 echo "2 bottles of beer on the wall, 2 bottles of beer. Take one down and pass it around, 1 bottle of beer on the wall." . "\n";

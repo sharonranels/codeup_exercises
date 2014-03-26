@@ -21,6 +21,7 @@ function list_items($list) {
 
 }
 
+
 // Get STDIN, strip whitespace and newlines, 
 // and convert to uppercase if $upper is true
 // DEFAULT = ($upper = FALSE) in THIS CASE
@@ -88,15 +89,16 @@ do {
         echo 'What is the name of the file to which you would like to save? ';
         $input = get_input(true);
         $handle = fopen($filename, "w+");
-        if (file_exists($input){
+        if (file_exists($input)) {
             echo 'This file already exists - do you want to overwrite it? ';    
         }
         
-            foreach ($items as $task) {
-            fwrite($handle, PHP_EOL . $task);
-        }
+        foreach ($items as $task) {
+            if(fwrite($handle, PHP_EOL . $task)) {
+            
             } else {
-            file_put_contents($filename, $input);
+                file_put_contents($filename, $input);
+            }
         }
         fclose($handle);
 
